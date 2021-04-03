@@ -1,1 +1,46 @@
 #!/bin/bash
+
+cat logo | lolcat -t
+
+echo -e "\e[33m@Author: John Jayson B. De Leon"
+echo -e "@Github:savjaylade84\e[0m"
+
+echo ""
+
+echo "enter username:"
+read -r username
+
+echo ""
+
+social_media_url=(
+				  "https://facebook.com/${username}"
+				  "https://twitter.com/${username}"
+				  "https://instagram.com/${username}"
+				  "https://linkedin.com/${username}"
+				  "https://reddit.com/${username}"
+				  "https://messenger.com/${username}"
+				  "https://qoura.com/${username}"
+				  "https://youtube.com/${username}"
+				  "https://twitch.com/${username}"
+				  "https://telegram.com/${username}"
+				  "https://snapchat.com/${username}"
+				  "https://wechat.com/${username}"
+				  "https://github.com/${username}"
+				  )
+
+function testUrl(){
+
+if wget --spider "$1" 2>/dev/null; then
+    echo -e "-[ $1 ]\e[1;32m~[200]->[Found]\e[0m"
+else
+    echo -e "-[ $1 ]\e[1;33m~[404]->[Not Found]\e[0m"
+fi
+
+}
+function runScript(){
+	for i in ${social_media_url[@]}; do
+	testUrl $i
+	done
+}
+
+runScript
