@@ -52,5 +52,6 @@ function runScript(){
 	done
 }
 
+
 #run the whole script
 runScript
