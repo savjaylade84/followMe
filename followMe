@@ -1,17 +1,23 @@
 #!/bin/bash
 
+# show logo
 cat logo | lolcat -t
 
+#show authorship
 echo -e "\e[33m@Author: John Jayson B. De Leon"
 echo -e "@Github:savjaylade84\e[0m"
 
+#space betwwen
 echo ""
 
+#get username
 echo "enter username:"
 read -r username
 
+#space between
 echo ""
 
+#list of social media url
 social_media_url=(
 				  "https://facebook.com/${username}"
 				  "https://twitter.com/${username}"
@@ -28,6 +34,7 @@ social_media_url=(
 				  "https://github.com/${username}"
 				  )
 
+#try to search username existent in social media platform
 function testUrl(){
 
 if wget --spider "$1" 2>/dev/null; then
@@ -37,10 +44,13 @@ else
 fi
 
 }
+
+#feeding the list of ocial media url
 function runScript(){
 	for i in ${social_media_url[@]}; do
 	testUrl $i
 	done
 }
 
+#run the whole script
 runScript
