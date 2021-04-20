@@ -5,14 +5,17 @@ cat logo | lolcat -t
 
 #show authorship
 echo -e "\e[33m@Author: John Jayson B. De Leon"
-echo -e "@Github:savjaylade84\e[0m"
+echo -e "@Github: savjaylade84\e[0m"
 
 #space betwwen
 echo ""
 
 #get username
-echo "enter username:"
+echo -ne  "\e[0;34m[ enter username ]:\e[0m "
 read -r username
+echo ""
+sleep .2
+echo -e "\e[0;34m[Process]->[Checking...]\e[0m"
 
 #space between
 echo ""
@@ -32,24 +35,114 @@ social_media_url=(
 				  "https://snapchat.com/${username}"
 				  "https://wechat.com/${username}"
 				  "https://github.com/${username}"
+				  "https://${username}.blogspot.com"
+				  "https://plus.google.com/+${username}/posts"
+				  "https://www.reddit.com/user/${username}"
+				  "https://${username}.wordpress.com"
+				  "https://www.pinterest.com/${username}"
+				  "https://${username}.tumblr.com"
+				  "https://www.flickr.com/people/${username}"
+				  "https://steamcommunity.com/id/${username}"
+				  "https://vimeo.com/${username}"
+				  "https://soundcloud.com/${username}"
+				  "https://disqus.com/${username}"
+				  "https://medium.com/@${username}"
+				  "https://${username}.deviantart.com" 
+				  "https://vk.com/${username} " 
+				  "https://about.me/${username} " 
+				  "https://imgur.com/user/${username} " 
+				  "https://flipboard.com/${username} " 
+				  "https://slideshare.net/${username} " 
+				  "https://fotolog.com/${username} " 
+				  "https://open.spotify.com/user/${username} " 
+				  "https://www.mixcloud.com/${username} " 
+				  "https://www.scribd.com/${username} " 
+				  "https://www.badoo.com/en/${username} " 
+				  "https://www.patreon.com/${username} " 
+				  "https://bitbucket.org/${username} " 
+				  "https://www.dailymotion.com/${username} " 
+				  "https://www.etsy.com/shop/${username} " 
+				  "https://cash.me/${username} " 
+				  "https://www.behance.net/${username} " 
+				  "https://www.goodreads.com/${username} " 
+				  "https://www.instructables.com/member/${username} " 
+				  "https://keybase.io/${username} " 
+				  "https://kongregate.com/accounts/${username} " 
+				  "https://${username}.livejournal.com" 
+				  "https://angel.co/${username} " 
+				  "https://last.fm/user/${username} " 
+				  "https://dribbble.com/${username} " 
+				  "https://www.codecademy.com/${username} " 
+				  "https://en.gravatar.com/${username} " 
+				  "https://pastebin.com/u/${username} " 
+				  "https://www.roblox.com/user.aspx?username=${username} "
+				  "https://foursquare.com/${username} " 
+				  "https://www.gumroad.com/${username} " 
+				  "https://${username}.newgrounds.com " 
+				  "https://www.wattpad.com/user/${username} " 
+				  "https://www.canva.com/${username} " 
+				  "https://creativemarket.com/${username} " 
+				  "https://www.trakt.tv/users/${username} " 
+				  "https://500px.com/${username} " 
+				  "https://buzzfeed.com/${username} " 
+				  "https://tripadvisor.com/members/${username} " 
+				  "https://${username}.hubpages.com/" 
+				  "https://${username}.contently.com" 
+				  "https://houzz.com/user/${username} " 
+				  "https://blip.fm/${username} " 
+				  "https://www.wikipedia.org/wiki/User:${username} " 
+				  "https://news.ycombinator.com/user?id=${username} " 
+				  "https://www.codementor.io/${username} " 
+				  "https://www.reverbnation.com/${username} " 
+				  "https://www.designspiration.net/${username} " 
+				  "https://www.bandcamp.com/${username} " 
+				  "https://www.colourlovers.com/love/${username} " 
+				  "https://www.ifttt.com/p/${username} " 
+				  "https://www.ebay.com/usr/${username} " 
+				  "https://${username}.slack.com" 
+				  "https://www.okcupid.com/profile/${username} " 
+				  "https://www.trip.skyscanner.com/user/${username} " 
+				  "https://ello.co/${username} " 
+				  "https://tracky.com/user/${username} " 
+				  "https://www.tripit.com/people/${username} " 
+				  "https://${username}.basecamphq.com/login" 
+				  
+				  
 				  )
+
+function getDomain(){
+	return grep -E '*.com' <<< echo $1
+}
 
 #try to search username existent in social media platform
 function testUrl(){
 
 if wget --spider "$1" 2>/dev/null; then
-    echo -e "-[ $1 ]\e[1;32m~[200]->[Found]\e[0m"
+    echo -e "\e[1;32m[/]~>\e[0m\e[0;35m[ $1 ]\e[0m\e[1;32m~[200]->[Found]\e[0m"
 else
-    echo -e "-[ $1 ]\e[1;33m~[404]->[Not Found]\e[0m"
+    echo -e "\e[1;33m[X]~>\e[0m\e[0;35m[ $1 ]\e[0m\e[1;33m~[404]->[Not Found]\e[0m"
 fi
+
+   echo ""
 
 }
 
 #feeding the list of ocial media url
 function runScript(){
-	for i in ${social_media_url[@]}; do
-	testUrl $i
-	done
+
+	echo -e "\e[0;34m[Process]->[Checking Internet Connection...] \e[0m"
+	echo ""
+	if ping -q -w1 -c1 google.com &>/dev/null; then 
+		echo -e "\e[0;35m[Social Media List:] \e[0m"
+	    echo ""
+		for i in ${social_media_url[@]}; do
+			testUrl  $i
+		done
+	else
+		echo -e '\e[0;31m[Error]->[Internet Connection Failed!]\e[0m'
+	fi
+	echo ""
+	echo -e "\e[0;34m[Process]->[Program Exit] \e[0m"
 }
 
 #run the whole script
