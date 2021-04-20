@@ -5,7 +5,8 @@ cat logo | lolcat -t
 
 #show authorship
 echo -e "\e[33m@Author: John Jayson B. De Leon"
-echo -e "@Github: savjaylade84\e[0m"
+echo -e "@Github: savjaylade84"
+echo -e "@Description: search for username existent im any social media.\e[0m"
 
 #space betwwen
 echo ""
