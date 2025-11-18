@@ -1,4 +1,4 @@
-# Follow Me (Bash Script Tool)
+# Follow Me (Bash Script Searching Tool )
 
 ![Actual Look](https://github.com/savjaylade84/followMe/blob/main/followMe2.jpg?raw=true) 
 
