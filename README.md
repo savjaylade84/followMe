@@ -2,7 +2,7 @@
 
 ![Actual Look](https://github.com/savjaylade84/followMe/blob/main/followMe2.jpg?raw=true) 
 
-- **This tool get the username then try to search its existent in the list of social media**</br>
+- **This tool get the username then try to search its existent in the list of social media url**</br>
 
 - **The dependency you need to install**</br>
 
