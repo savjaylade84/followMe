@@ -16,4 +16,4 @@
 - **To Run this you need to type this command in the terminal**</br>
 `bash followMe`</br>
 
-**email me @ savjaylade84@gmail.com**
+**email me @ deleonjohnjayson@proton.me | deleonjohnjayson@gmail.com**
