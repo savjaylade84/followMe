@@ -1,4 +1,4 @@
-# Follow Me (Bash Script Username Searching Tool )
+# Follow Me (Bash Script Tool for Searching the Username in Most Social Media Sites)
 
 ![Actual Look](https://github.com/savjaylade84/followMe/blob/main/followMe2.jpg?raw=true) 
 
