@@ -6,7 +6,7 @@
 
 - **This tool get the username then try to search its existent in the list of social media urls**</br>
 
-- **The dependency needed to install**</br>
+- **The dependencies needed to install**</br>
 
 	- **wget** `apt install wget`</br>
 	- **ruby** `apt install ruby`</br>
@@ -18,4 +18,4 @@
 - **To Run this you need to write this command in the terminal**</br>
 `bash followMe`</br>
 
-**For any concern, collaboration, or anything else just email me @ deleonjohnjayson@proton.me | deleonjohnjayson@gmail.com**
+**For any concern, collaboration, or anything else, just email me @ deleonjohnjayson@proton.me | deleonjohnjayson@gmail.com**
