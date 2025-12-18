@@ -1,4 +1,4 @@
-# Follow Me 
+# Bash Script Tool Name: Follow Me 
 
 ## Bash Script Tool for Searching the Username in Most Social Media Sites
 
