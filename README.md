@@ -1,7 +1,5 @@
 # Follow Me - Bash Script Tool
 
-## Bash Script Tool for Searching the Username on list of Social Media link
-
 ![Actual Look](https://github.com/savjaylade84/followMe/blob/main/followMe2.jpg?raw=true) 
 
 - **This tool get the username then try to search its existent in the list of social media urls**</br>
